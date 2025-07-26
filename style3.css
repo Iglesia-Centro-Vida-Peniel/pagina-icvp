@@ -1,0 +1,678 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.background-carousel {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    overflow: hidden;
+    background-color: #2c2c2c;
+}
+
+.carousel-slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-slide img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    filter: brightness(0.7);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-bottom: 3px solid #e0d8c9;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.navbar-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: #5c4033;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    margin: 0;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: #5c4033;
+    font-size: 0.9em;
+    font-weight: 700;
+    padding: 8px 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    display: block;
+}
+
+.navbar-menu a:hover {
+    color: #919191;
+    transform: translateY(-2px);
+}
+
+.navbar-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #1e1f1e;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.navbar-menu a:hover::after {
+    width: 60%;
+}
+
+.hero-section {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+}
+
+.text-background {
+    padding: 20px 40px;
+    display: inline-block;
+}
+
+.title {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 7em;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.3);
+    letter-spacing: 2px;
+}
+
+.main-content {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+.about-us-section {
+    background-color: #f5f5f5;
+    padding: 40px 15px;
+    text-align: center;
+}
+
+/* Quiénes Somos */
+.who-we-are-section {
+    max-width: 1000px;
+    margin: 0 auto 40px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.who-we-are-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    color: #2c2c2c;
+    margin-bottom: 20px;
+}
+
+.who-we-are-content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.who-we-are-content img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.who-we-are-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.who-we-are-text p {
+    font-size: 1em;
+    color: #5c4033;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Nuestra Historia */
+.about-us-content {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.about-us-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    color: #2c2c2c;
+    margin-bottom: 15px;
+}
+
+.about-us-content p {
+    font-size: 1em;
+    color: #5c4033;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Nuestra Comunidad */
+.community-section {
+    max-width: 1000px;
+    margin: 0 auto 40px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.community-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    color: #2c2c2c;
+    margin-bottom: 20px;
+}
+
+.community-content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.community-content img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.community-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.community-text p {
+    font-size: 1em;
+    color: #5c4033;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Misión, Visión y Valores */
+.values-section {
+    background-color: #E8FFF5;
+    padding: 40px 15px;
+}
+
+.values-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    color: #2c2c2c;
+    margin-bottom: 20px;
+}
+
+.values-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.value-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.value-card h3 {
+    font-family: 'Lato', sans-serif;
+    color: #5c4033;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.value-card p {
+    color: #2c2c2c;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+/* Nuestro Compromiso */
+.commitment-section {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.commitment-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    color: #2c2c2c;
+    margin-bottom: 15px;
+}
+
+.commitment-section p {
+    font-size: 1em;
+    color: #5c4033;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Líderes Espirituales */
+.leaders-section {
+    padding: 40px 15px;
+    background: linear-gradient(135deg, #e0d8c9, #f5f5f5);
+}
+
+.leaders-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    color: #2c2c2c;
+    margin-bottom: 20px;
+}
+
+.leaders-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.leader-card {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 260px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.leader-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.leader-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.leader-card h3 {
+    font-family: 'Lato', sans-serif;
+    color: #5c4033;
+    font-size: 1.3em;
+    margin-bottom: 5px;
+}
+
+.leader-card p {
+    color: #2c2c2c;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+/* Versículo Destacado */
+.verse-section {
+    background-color: #E8FFF5;
+    padding: 40px 15px;
+    text-align: center;
+}
+
+.verse-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    color: #2c2c2c;
+    margin-bottom: 20px;
+}
+
+.verse-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%);
+}
+
+.verse-container p {
+    font-size: 1.1em;
+    color: #2c2c2c;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.verse-container h3 {
+    font-family: 'Lato', sans-serif;
+    color: #5c4033;
+    font-size: 1em;
+}
+
+/* Testimonios */
+.testimonials-section {
+    padding: 40px 15px;
+    background-color: #f5f5f5;
+}
+
+.testimonials-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    color: #2c2c2c;
+    margin-bottom: 20px;
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-card p {
+    color: #2c2c2c;
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.testimonial-card h3.author {
+    font-family: 'Lato', sans-serif;
+    color: #5c4033;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+/* Únete a Nosotros */
+.join-us-section {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.join-us-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    color: #2c2c2c;
+    margin-bottom: 15px;
+}
+
+.join-us-section p {
+    font-size: 1em;
+    color: #5c4033;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.join-us-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #5c4033, #e0d8c9);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.join-us-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #3a2a1f, #c4b8a0);
+}
+
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #5c4033, #e0d8c9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-top:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #3a2a1f, #c4b8a0);
+}
+
+.scroll-top svg {
+    width: 24px;
+    height: 24px;
+}
+
+.footer {
+    background-color: #e0d8c9;
+    color: #5c4033;
+    padding: 40px 15px;
+    text-align: center;
+    z-index: 1;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #5c4033;
+}
+
+.footer-section p {
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+.footer-section a {
+    color: #2c2c2c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #919191;
+}
+
+.footer-icon {
+    margin-top: 10px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid #5c4033;
+    padding-top: 10px;
+}
+
+.footer-bottom p {
+    font-size: 0.8em;
+}
+
+@media (max-width: 1200px) {
+    .title { font-size: 5.5em; }
+    .about-us-content h2, .who-we-are-section h2, .community-section h2, .values-section h2, .leaders-section h2, .verse-section h2, .testimonials-section h2, .commitment-section h2, .join-us-section h2 { font-size: 1.8em; }
+    .about-us-content, .who-we-are-section, .community-section, .commitment-section, .join-us-section { max-width: 700px; padding: 25px 30px; }
+    .value-card, .leader-card, .testimonial-card { width: 260px; }
+}
+
+@media (max-width: 768px) {
+    .title { font-size: 3.5em; }
+    .navbar-toggle { display: flex; }
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        padding: 10px 0;
+    }
+    .navbar-menu.active { display: flex; }
+    .text-background { padding: 15px 20px; }
+    .about-us-section, .values-section, .leaders-section, .verse-section, .testimonials-section, .who-we-are-section, .community-section, .commitment-section, .join-us-section { padding: 30px 15px; }
+    .about-us-content h2, .who-we-are-section h2, .community-section h2, .values-section h2, .leaders-section h2, .verse-section h2, .testimonials-section h2, .commitment-section h2, .join-us-section h2 { font-size: 1.6em; }
+    .about-us-content, .who-we-are-section, .community-section, .commitment-section, .join-us-section { padding: 20px 25px; }
+    .who-we-are-content, .community-content { flex-direction: column; }
+    .who-we-are-content img, .community-content img { max-width: 100%; }
+    .who-we-are-text, .community-text { text-align: center; }
+    .value-card, .leader-card, .testimonial-card { width: 100%; max-width: 300px; }
+    .footer-content { flex-direction: column; }
+}
+
+@media (max-width: 480px) {
+    .title { font-size: 2.5em; }
+    .text-background { padding: 10px 15px; }
+    .about-us-content h2, .who-we-are-section h2, .community-section h2, .values-section h2, .leaders-section h2, .verse-section h2, .testimonials-section h2, .commitment-section h2, .join-us-section h2 { font-size: 1.5em; }
+    .about-us-content p, .who-we-are-text p, .community-text p, .value-card p, .leader-card p, .testimonial-card p, .verse-container p, .commitment-section p, .join-us-section p { font-size: 0.85em; }
+    .verse-container p { font-size: 1em; }
+    .verse-container h3 { font-size: 0.9em; }
+    .about-us-content, .who-we-are-section, .community-section, .commitment-section, .join-us-section { padding: 15px 20px; }
+}
