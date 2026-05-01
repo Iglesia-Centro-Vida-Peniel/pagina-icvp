@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="style3.css">
     <style>
         .history-carousel {
-            max-width: 400px;
-            margin: 20px auto;
+            max-width: 380px;
+            margin: 15px auto;
             position: relative;
             overflow: hidden;
         }
@@ -350,7 +350,7 @@
                 currentIndex = (currentIndex - 1 + totalImages) % totalImages;
             }
 
-            const offset = -currentIndex * 400; // Ancho de una imagen
+            const offset = -currentIndex * 380; // Ancho de una imagen
             carousel.style.transform = `translateX(${offset}px)`;
 
             if (carouselId === 'carousel1') currentIndex1 = currentIndex;
