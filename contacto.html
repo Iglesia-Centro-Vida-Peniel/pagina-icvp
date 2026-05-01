@@ -11,9 +11,10 @@
     <!-- AOS Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Enlace al CSS -->
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style4.css">
 </head>
 <body>
+
     <!-- Carrusel de fondo -->
     <div class="background-carousel">
         <div class="carousel-slide">
@@ -27,7 +28,7 @@
             <img src="imgs/carousel/IMG-20250323-WA0011.jpg" alt="Foto 8" loading="lazy">
             <img src="imgs/carousel/IMG-20250323-WA0013.jpg" alt="Foto 9" loading="lazy">
             <img src="imgs/carousel/IMG-20250323-WA0014.jpg" alt="Foto 10" loading="lazy">
-            <img src="imgs/carousel/IMG-20250323-WA0016.jpg" alt="Foto 10" loading="lazy">
+            <img src="imgs/carousel/IMG-20250323-WA0016.jpg" alt="Foto 11" loading="lazy">
         </div>
     </div>
 
@@ -42,7 +43,7 @@
             <li><a href="index.html">Inicio</a></li>
             <li><a href="nosotros.html">Nosotros</a></li>
             <li><a href="eventos.html">Eventos</a></li>
-            <li><a href="contacto.php">Contacto</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
             <li><a href="donaciones.html">Donaciones</a></li>
             <li><a href="misiones.html">Misiones</a></li>
         </ul>
@@ -57,66 +58,31 @@
 
     <!-- Sección de Contacto -->
     <section class="contact-section">
-        <div class="contact-container">
+        <div class="contact-container" data-aos="fade-up" data-aos-duration="1000">
             <h2>Contáctanos</h2>
             <p>¿Tienes alguna pregunta o deseas ponerte en contacto con nosotros? ¡Déjanos un mensaje!</p>
+            
             <div class="contact-form">
-                <form method="POST" action="contacto.php">
+                <form method="POST" action="contacto.html">
                     <input type="text" name="nombre" placeholder="Nombre" required>
                     <input type="email" name="email" placeholder="Correo Electrónico" required>
                     <textarea name="mensaje" placeholder="Mensaje" rows="5" required></textarea>
-                    <button type="submit" name="submit">Enviar Mensaje</button>
+                    <button type="submit">Enviar Mensaje</button>
                 </form>
-                <?php
-                    if (isset($_POST['submit'])) {
-                        $nombre = $_POST['nombre'];
-                        $email = $_POST['email'];
-                        $mensaje = $_POST['mensaje'];
-
-                        // Configuración de la conexión a la base de datos
-                        $servername = "localhost";
-                        $username = "root";
-                        $password = "ola";
-                        $dbname = "centro_vida_peniel";
-
-                        // Crear conexión
-                        $conn = new mysqli($servername, $username, $password, $dbname);
-
-                        // Verificar conexión
-                        if ($conn->connect_error) {
-                            die("Conexión fallida: " . $conn->connect_error);
-                        }
-
-                        // Preparar y vincular
-                        $stmt = $conn->prepare("INSERT INTO contactos (nombre, email, mensaje, fecha) VALUES (?, ?, ?, NOW())");
-                        $stmt->bind_param("sss", $nombre, $email, $mensaje);
-
-                        // Ejecutar la consulta
-                        if ($stmt->execute()) {
-                            echo "<p style='color: green; text-align: center;'>Mensaje enviado con éxito.</p>";
-                        } else {
-                            echo "<p style='color: red; text-align: center;'>Error al enviar el mensaje.</p>";
-                        }
-
-                        // Cerrar conexión
-                        $stmt->close();
-                        $conn->close();
-                    }
-                ?>
             </div>
         </div>
 
         <!-- Información de Contacto -->
-        <div class="contact-info">
+        <div class="contact-info" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
             <h2>Información de Contacto</h2>
             <div class="info-container">
                 <div class="info-item">
                     <h3>Dirección</h3>
-                    <p>CENTRO VIDA PENIEL, 20.1066895, -98.3525408, México</p>
+                    <p>CENTRO VIDA PENIEL, Pachuca de Soto, Hidalgo, México</p>
                 </div>
                 <div class="info-item">
                     <h3>Teléfono</h3>
-                    <p>+52 7753498524</p>
+                    <p>+52 775 349 8524</p>
                 </div>
                 <div class="info-item">
                     <h3>Email</h3>
@@ -126,9 +92,10 @@
         </div>
 
         <!-- Mapa -->
-        <div class="map-section">
+        <div class="map-section" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
             <h2>Encuéntranos</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086507563773!2d-98.3538175!3d20.1066719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d057002f790c7d:0xc86fb217e0be2813!2zQ0VOVFJPIFZJREFgUEVOSUVM!5e0!3m2!1ses!2smx!4v1718299200000" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086507563773!2d-98.3538175!3d20.1066719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d057002f790c7d:0xc86fb217e0be2813!2zQ0VOVFJPIFZJREFgUEVOSUVM!5e0!3m2!1ses!2smx!4v1718299200000" 
+                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
@@ -144,7 +111,10 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Centro Vida Peniel</h3>
-                <p>CENTRO VIDA PENIEL, 20.1066895, -98.3525408, México</p>
+                <p>Un encuentro con Dios cara a cara.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
                 <p>Email: icvpeniel@gmail.com</p>
                 <p>Teléfono: +52 7753498524</p>
             </div>
@@ -154,9 +124,7 @@
                     <a href="index.html">Inicio</a> | 
                     <a href="nosotros.html">Nosotros</a> | 
                     <a href="eventos.html">Eventos</a> | 
-                    <a href="contacto.php">Contacto</a> | 
-                    <a href="donaciones.html">Donaciones</a> | 
-                    <a href="misiones.html">Misiones</a>
+                    <a href="contacto.html">Contacto</a>
                 </p>
             </div>
             <div class="footer-section">
@@ -175,7 +143,6 @@
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        // Inicializar AOS
         AOS.init({ once: true, duration: 800 });
 
         // Carrusel de fondo
@@ -197,7 +164,7 @@
         showSlide(currentSlide);
         setInterval(nextSlide, 5000);
 
-        // Control del menú hamburguesa
+        // Menú hamburguesa
         const navbarToggle = document.querySelector('.navbar-toggle');
         const navbarMenu = document.querySelector('.navbar-menu');
 
