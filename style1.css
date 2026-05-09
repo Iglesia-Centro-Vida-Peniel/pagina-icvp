@@ -538,47 +538,7 @@ body::before {
     justify-content: center;
     align-items: center;
 }
-.launch-section{
-    padding: 100px 20px;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-    url('imgs/fondos/radio.jpg');
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    color: white;
-}
 
-.launch-container{
-    max-width: 800px;
-    margin: auto;
-}
-
-.launch-section h2{
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: #d4af37;
-}
-
-.launch-section h3{
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-.launch-subtitle{
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    font-style: italic;
-}
-
-.launch-date{
-    display: inline-block;
-    background: #d4af37;
-    color: black;
-    padding: 10px 25px;
-    border-radius: 30px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
 .community-background {
     position: absolute;
     top: 0;
@@ -658,7 +618,47 @@ body::before {
     font-size: 1em;
     margin-top: 10px;
 }
+.launch-section{
+    padding: 100px 20px;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('imgs/fondos/radio.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+}
 
+.launch-container{
+    max-width: 800px;
+    margin: auto;
+}
+
+.launch-section h2{
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #d4af37;
+}
+
+.launch-section h3{
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.launch-subtitle{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.launch-date{
+    display: inline-block;
+    background: #d4af37;
+    color: black;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
 .cta-section {
     background: linear-gradient(135deg, #5c4033, #e0d8c9);
     padding: 40px 15px;
