@@ -202,12 +202,25 @@
 
     <!-- Sección de Comunidad -->
     <section class="community-section" id="comunidad">
-        <div class="community-background"></div>
-        <div class="community-container">
-            <h2>Nuestra Comunidad</h2>
-            <p>Puedes comunicarte con nosotros en el apartado de contacto. Estaremos felices de atenderte, orar contigo y ayudarte en lo que necesites.</p>
-            <a href="contacto.html" class="cta-button">Únete a Nosotros</a>
-        </div>
+
+    <div class="community-background"></div>
+
+    <div class="community-container">
+
+        <h2>Nuestra Comunidad</h2>
+
+        <p>
+            Puedes comunicarte con nosotros en el apartado de contacto.
+            Estaremos felices de atenderte, orar contigo y ayudarte
+            en lo que necesites.
+        </p>
+
+        <a href="contacto.html" class="cta-button">
+            Únete a Nosotros
+        </a>
+
+    </div>
+
     </section>
 
     <!-- Sección de Versículo -->
@@ -430,15 +443,14 @@
     showVerse();
 
     setInterval(showVerse, 10000);
-
     // Parallax para la sección de comunidad
     const communityBackground = document.querySelector('.community-background');
 
     window.addEventListener('scroll', () => {
         const scrollPosition = window.scrollY;
 
-        communityBackground.style.backgroundPositionY =
-            `${scrollPosition * 0.3}px`;
+        communityBackground.style.transform =
+            `translateY(${scrollPosition * 0.15}px)`;
     });
 
     // Botón para subir

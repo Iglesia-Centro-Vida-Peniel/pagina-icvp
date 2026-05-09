@@ -528,62 +528,145 @@ body::before {
 .gallery-item:hover img {
     transform: scale(1.1);
 }
+/* =========================
+   COMMUNITY SECTION
+========================= */
 
 .community-section {
+
     position: relative;
-    padding: 40px 15px;
-    text-align: center;
-    min-height: 50vh;
+
+    padding: 80px 20px;
+
+    min-height: 60vh;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
+    text-align: center;
+
+    overflow: hidden;
 }
 
+/* IMAGEN DE FONDO */
+
 .community-background {
+
     position: absolute;
+
     top: 0;
     left: 0;
+
+    width: 100%;
+    height: 120%;
+
+    background-image: url('imgs/carousel/IMG-20250323-WA0007.jpg');
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    z-index: -2;
+
+    transition: transform 0.1s linear;
+}
+
+/* CAPA OSCURA / DORADA */
+
+.community-background::before {
+
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
     width: 100%;
     height: 100%;
-    background-image: url('imgs/carousel/IMG-20250323-WA0007.jpg');
-    background-size: cover;
-    background-position: center;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255, 215, 0, 0.35),
+        rgba(255, 255, 255, 0.55)
+    );
+
     z-index: -1;
 }
 
-.community-background::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.5), rgba(255, 255, 255, 0.7));
-    z-index: 0;
-}
+/* CONTENEDOR */
 
 .community-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+    position: relative;
+
+    max-width: 900px;
+
+    background: rgba(255,255,255,0.92);
+
+    backdrop-filter: blur(6px);
+
+    padding: 50px 40px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+    border: 2px solid rgba(255,255,255,0.5);
 }
+
+/* TITULO */
 
 .community-container h2 {
+
     font-family: 'Playfair Display', serif;
-    font-size: 2em;
+
+    font-size: 2.5rem;
+
     color: #2c2c2c;
-    margin-bottom: 15px;
+
+    margin-bottom: 20px;
 }
+
+/* TEXTO */
 
 .community-container p {
-    font-size: 1em;
+
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+
     color: #5c4033;
-    margin-bottom: 15px;
+
+    margin-bottom: 30px;
 }
 
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .community-container{
+
+        padding: 35px 25px;
+    }
+
+    .community-container h2{
+
+        font-size: 2rem;
+    }
+
+    .community-container p{
+
+        font-size: 1rem;
+    }
+
+}
 .verse-section {
     background-color: #E8FFF5;
     padding: 40px 15px;
