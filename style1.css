@@ -618,46 +618,223 @@ body::before {
     font-size: 1em;
     margin-top: 10px;
 }
-.launch-section{
+/* =========================
+   RADIO VIDA BETHEL
+========================= */
+
+.radio-section{
+    width: 100%;
     padding: 100px 20px;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-    url('imgs/fondos/radio.jpg');
-    background-size: cover;
-    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.radio-container{
+    width: 100%;
+    max-width: 1000px;
+
+    background: rgba(255,255,255,0.85);
+
+    backdrop-filter: blur(8px);
+
+    border-radius: 25px;
+
+    padding: 60px 40px;
+
     text-align: center;
-    color: white;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+    border: 2px solid #e0d8c9;
 }
 
-.launch-container{
-    max-width: 800px;
-    margin: auto;
+/* TITULO PEQUEÑO */
+.radio-small-title{
+    font-size: 1.3rem;
+
+    letter-spacing: 3px;
+
+    color: #8b7355;
+
+    margin-bottom: 15px;
+
+    text-transform: uppercase;
 }
 
-.launch-section h2{
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: #d4af37;
+/* TITULO PRINCIPAL */
+.radio-title{
+    font-size: 3.5rem;
+
+    color: #5c4033;
+
+    margin-bottom: 15px;
+
+    font-family: 'Cinzel', serif;
 }
 
-.launch-section h3{
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-.launch-subtitle{
+/* SUBTITULO */
+.radio-subtitle{
     font-size: 1.5rem;
-    margin-bottom: 20px;
+
+    color: #777;
+
+    margin-bottom: 25px;
+
     font-style: italic;
 }
 
-.launch-date{
+/* FECHA */
+.radio-date{
     display: inline-block;
-    background: #d4af37;
-    color: black;
-    padding: 10px 25px;
-    border-radius: 30px;
+
+    background: #5c4033;
+
+    color: white;
+
+    padding: 12px 35px;
+
+    border-radius: 50px;
+
+    font-size: 1.1rem;
+
     font-weight: bold;
-    margin-bottom: 20px;
+
+    margin-bottom: 40px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* TEXTO */
+.radio-text{
+    font-size: 1.1rem;
+
+    color: #444;
+
+    line-height: 1.8;
+
+    max-width: 700px;
+
+    margin: auto auto 35px auto;
+}
+
+/* BOTON */
+.radio-button{
+    display: inline-block;
+
+    padding: 14px 35px;
+
+    background: #d4af37;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    border-radius: 40px;
+
+    font-weight: bold;
+
+    transition: all 0.3s ease;
+}
+
+.radio-button:hover{
+    background: #b8952f;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   CUENTA REGRESIVA
+========================= */
+
+.countdown-container{
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 40px;
+}
+
+.countdown-box{
+    width: 120px;
+    height: 120px;
+
+    background: rgba(92, 64, 51, 0.08);
+
+    border: 2px solid #e0d8c9;
+
+    border-radius: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    transition: all 0.3s ease;
+}
+
+.countdown-box:hover{
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.countdown-box span{
+    font-size: 2.5rem;
+
+    font-weight: bold;
+
+    color: #5c4033;
+
+    font-family: 'Cinzel', serif;
+}
+
+.countdown-box p{
+    margin-top: 5px;
+
+    color: #777;
+
+    font-size: 0.9rem;
+
+    text-transform: uppercase;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    .radio-container{
+        padding: 50px 25px;
+    }
+
+    .radio-title{
+        font-size: 2.3rem;
+    }
+
+    .radio-subtitle{
+        font-size: 1.1rem;
+    }
+
+    .countdown-box{
+        width: 90px;
+        height: 90px;
+    }
+
+    .countdown-box span{
+        font-size: 1.8rem;
+    }
+
 }
 .cta-section {
     background: linear-gradient(135deg, #5c4033, #e0d8c9);
