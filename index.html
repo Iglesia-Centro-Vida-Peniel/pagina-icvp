@@ -219,24 +219,64 @@
         </div>
     </section>
 
-    <section class="launch-section" id="radio">
-    <div class="launch-container">
-        <h2>Próximamente</h2>
-        <h3>🎙️ Radio Vida Bethel</h3>
-        <p class="launch-subtitle">"La Voz del Cielo"</p>
-        
-        <div class="launch-date">
-            <span>📅 17 de Agosto</span>
+ 
+    <!-- RADIO VIDA BETHEL -->
+    <section class="radio-section" id="radio">
+
+        <div class="radio-container">
+
+            <h2 class="radio-small-title">
+            Próximamente
+            </h2>
+
+            <h1 class="radio-title">
+            📻 Radio Vida Bethel
+            </h1>
+
+            <p class="radio-subtitle">
+            "La Voz del Cielo"
+            </p>
+
+            <div class="radio-date">
+            📅 17 de Agosto
+            </div>
+
+        <!-- CUENTA REGRESIVA -->
+            <div class="countdown-container">
+
+                <div class="countdown-box">
+                    <span id="days">00</span>
+                    <p>Días</p>
+                </div>
+
+                <div class="countdown-box">
+                    <span id="hours">00</span>
+                    <p>Horas</p>
+                </div>
+
+                <div class="countdown-box">
+                    <span id="minutes">00</span>
+                    <p>Minutos</p>
+                </div>
+
+                <div class="countdown-box">
+                    <span id="seconds">00</span>
+                    <p>Segundos</p>
+                </div>
+
+            </div>
+
+            <p class="radio-text">
+            Muy pronto estaremos compartiendo alabanzas, mensajes de fe,
+            enseñanzas y contenido especial para bendecir tu vida.
+            </p>
+
+            <a href="contacto.html" class="radio-button">
+            Más Información
+            </a>
+
         </div>
 
-        <p>
-            Muy pronto podrás disfrutar contenido cristiano, alabanzas, mensajes de fe y transmisiones especiales a través de nuestra nueva radio.
-        </p>
-
-        <a href="contacto.html" class="cta-button">
-            Más Información
-        </a>
-    </div>
     </section>
     
     <!-- Sección de Llamado a la Acción -->
@@ -406,7 +446,48 @@
                 scrollTopButton.style.pointerEvents = 'none';
             }
         });
+// CUENTA REGRESIVA RADIO
 
+        const launchDate = new Date("August 17, 2025 00:00:00").getTime();
+
+        const countdown = setInterval(() => {
+
+            const now = new Date().getTime();
+
+            const distance = launchDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+            const hours = Math.floor(
+                (distance % (1000 * 60 * 60 * 24))
+                / (1000 * 60 * 60)
+            );
+
+            const minutes = Math.floor(
+                (distance % (1000 * 60 * 60))
+                / (1000 * 60)
+            );
+
+        const seconds = Math.floor(
+            (distance % (1000 * 60))
+            / 1000
+        );
+
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+
+        if(distance < 0){
+
+            clearInterval(countdown);
+
+            document.querySelector(".countdown-container").innerHTML =
+            "<h2>🎙️ ¡YA ESTAMOS AL AIRE!</h2>";
+
+        }
+
+    }, 1000);
         scrollTopButton.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
