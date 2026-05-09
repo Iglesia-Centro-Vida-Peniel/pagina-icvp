@@ -12,7 +12,7 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
-    background-image: url('imgs/fondo.png');
+    background-image: url('imgs/fondos/fondo.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -545,7 +545,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('Imgs/community.jpg');
+    background-image: url('imgs/carousel/IMG-20250323-WA0007.jpg');
     background-size: cover;
     background-position: center;
     z-index: -1;
