@@ -561,7 +561,7 @@ body::before {
     left: 0;
 
     width: 100%;
-    height: 120%;
+    height: 100%;
 
     background-image: url('imgs/carousel/IMG-20250323-WA0007.jpg');
 
@@ -593,8 +593,8 @@ body::before {
     background:
     linear-gradient(
         135deg,
-        rgba(255, 215, 0, 0.35),
-        rgba(255, 255, 255, 0.55)
+        rgba(255, 247, 10, 0.409),
+        rgba(255, 254, 254, 0.288)
     );
 
     z-index: -1;
