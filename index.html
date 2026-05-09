@@ -230,7 +230,7 @@
             </h2>
 
             <h1 class="radio-title">
-            📻 Radio Vida Bethel
+            Radio Vida Bethel
             </h1>
 
             <p class="radio-subtitle">
@@ -238,7 +238,7 @@
             </p>
 
             <div class="radio-date">
-            📅 17 de Agosto
+            17 de Agosto
             </div>
 
         <!-- CUENTA REGRESIVA -->
@@ -360,113 +360,135 @@
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        // Inicializar AOS
-        AOS.init({ once: true, duration: 800 });
+    // Inicializar AOS
+    AOS.init({ once: true, duration: 800 });
 
-        // Carrusel de fondo
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-slide img');
-        const totalSlides = slides.length;
+    // Carrusel de fondo
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide img');
+    const totalSlides = slides.length;
 
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.style.opacity = i === index ? '1' : '0';
-            });
-        }
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.opacity = i === index ? '1' : '0';
+        });
+    }
 
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            showSlide(currentSlide);
-        }
-
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
         showSlide(currentSlide);
-        setInterval(nextSlide, 5000);
+    }
 
-        // Control del menú hamburguesa
-        const navbarToggle = document.querySelector('.navbar-toggle');
-        const navbarMenu = document.querySelector('.navbar-menu');
+    showSlide(currentSlide);
+    setInterval(nextSlide, 5000);
 
-        navbarToggle.addEventListener('click', () => {
-            navbarMenu.classList.toggle('active');
-            navbarToggle.classList.toggle('active');
-        });
+    // Control del menú hamburguesa
+    const navbarToggle = document.querySelector('.navbar-toggle');
+    const navbarMenu = document.querySelector('.navbar-menu');
 
-        // Versículo del Día
-       const verses = [
-    { text: "Porque de tal manera amó Dios al mundo...", reference: "Juan 3:16" },
-    { text: "El Señor es mi pastor, nada me faltará.", reference: "Salmos 23:1" },
-    { text: "Todo lo puedo en Cristo que me fortalece.", reference: "Filipenses 4:13" },
+    navbarToggle.addEventListener('click', () => {
+        navbarMenu.classList.toggle('active');
+        navbarToggle.classList.toggle('active');
+    });
 
-    { text: "La paz os dejo, mi paz os doy; yo no os la doy como el mundo la da.", reference: "Juan 14:27" },
-    { text: "Buscad primeramente el reino de Dios y su justicia.", reference: "Mateo 6:33" },
-    { text: "Pedid, y se os dará; buscad, y hallaréis.", reference: "Mateo 7:7" },
-    { text: "El Señor peleará por vosotros, y vosotros estaréis tranquilos.", reference: "Éxodo 14:14" },
-    { text: "Cercano está Jehová a los quebrantados de corazón.", reference: "Salmos 34:18" },
-    { text: "Muchas son las aflicciones del justo, pero de todas ellas le librará Jehová.", reference: "Salmos 34:19" },
-    { text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.", reference: "Salmos 119:105" },
-    { text: "Confía en Jehová con todo tu corazón.", reference: "Proverbios 3:5" },
-    { text: "No temas, porque yo estoy contigo.", reference: "Isaías 41:10" },
-    { text: "Los que esperan a Jehová tendrán nuevas fuerzas.", reference: "Isaías 40:31" },
-    { text: "El cielo y la tierra pasarán, pero mis palabras no pasarán.", reference: "Mateo 24:35" },
-    { text: "Estad siempre gozosos.", reference: "1 Tesalonicenses 5:16" },
-    { text: "Orad sin cesar.", reference: "1 Tesalonicenses 5:17" },
-    { text: "Dad gracias en todo.", reference: "1 Tesalonicenses 5:18" },
-    { text: "Si Dios es por nosotros, ¿quién contra nosotros?", reference: "Romanos 8:31" },
-    { text: "A los que aman a Dios, todas las cosas les ayudan a bien.", reference: "Romanos 8:28" },
-    { text: "Sed hacedores de la palabra, y no tan solamente oidores.", reference: "Santiago 1:22" }
-];
-        let verseIndex = 0;
-        const verseText = document.getElementById('verse-text');
-        const verseReference = document.getElementById('verse-reference');
+    // Versículo del Día
+    const verses = [
+        { text: "Porque de tal manera amó Dios al mundo...", reference: "Juan 3:16" },
+        { text: "El Señor es mi pastor, nada me faltará.", reference: "Salmos 23:1" },
+        { text: "Todo lo puedo en Cristo que me fortalece.", reference: "Filipenses 4:13" },
+        { text: "La paz os dejo, mi paz os doy; yo no os la doy como el mundo la da.", reference: "Juan 14:27" },
+        { text: "Buscad primeramente el reino de Dios y su justicia.", reference: "Mateo 6:33" },
+        { text: "Pedid, y se os dará; buscad, y hallaréis.", reference: "Mateo 7:7" },
+        { text: "El Señor peleará por vosotros, y vosotros estaréis tranquilos.", reference: "Éxodo 14:14" },
+        { text: "Cercano está Jehová a los quebrantados de corazón.", reference: "Salmos 34:18" },
+        { text: "Muchas son las aflicciones del justo, pero de todas ellas le librará Jehová.", reference: "Salmos 34:19" },
+        { text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.", reference: "Salmos 119:105" },
+        { text: "Confía en Jehová con todo tu corazón.", reference: "Proverbios 3:5" },
+        { text: "No temas, porque yo estoy contigo.", reference: "Isaías 41:10" },
+        { text: "Los que esperan a Jehová tendrán nuevas fuerzas.", reference: "Isaías 40:31" },
+        { text: "El cielo y la tierra pasarán, pero mis palabras no pasarán.", reference: "Mateo 24:35" },
+        { text: "Estad siempre gozosos.", reference: "1 Tesalonicenses 5:16" },
+        { text: "Orad sin cesar.", reference: "1 Tesalonicenses 5:17" },
+        { text: "Dad gracias en todo.", reference: "1 Tesalonicenses 5:18" },
+        { text: "Si Dios es por nosotros, ¿quién contra nosotros?", reference: "Romanos 8:31" },
+        { text: "A los que aman a Dios, todas las cosas les ayudan a bien.", reference: "Romanos 8:28" },
+        { text: "Sed hacedores de la palabra, y no tan solamente oidores.", reference: "Santiago 1:22" }
+    ];
 
-        function showVerse() {
-            verseText.textContent = verses[verseIndex].text;
-            verseReference.textContent = `- ${verses[verseIndex].reference}`;
-            verseIndex = (verseIndex + 1) % verses.length;
+    let verseIndex = 0;
+
+    const verseText = document.getElementById('verse-text');
+    const verseReference = document.getElementById('verse-reference');
+
+    function showVerse() {
+        verseText.textContent = verses[verseIndex].text;
+        verseReference.textContent = `- ${verses[verseIndex].reference}`;
+
+        verseIndex = (verseIndex + 1) % verses.length;
+    }
+
+    showVerse();
+
+    setInterval(showVerse, 10000);
+
+    // Parallax para la sección de comunidad
+    const communityBackground = document.querySelector('.community-background');
+
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.scrollY;
+
+        communityBackground.style.backgroundPositionY =
+            `${scrollPosition * 0.3}px`;
+    });
+
+    // Botón para subir
+    const scrollTopButton = document.querySelector('.scroll-top');
+
+    window.addEventListener('scroll', () => {
+
+        if (window.scrollY > 300) {
+            scrollTopButton.style.opacity = '1';
+            scrollTopButton.style.pointerEvents = 'auto';
+        } else {
+            scrollTopButton.style.opacity = '0';
+            scrollTopButton.style.pointerEvents = 'none';
         }
 
-        showVerse();
-        setInterval(showVerse, 10000);
+    });
 
-        // Parallax para la sección de comunidad
-        const communityBackground = document.querySelector('.community-background');
-        window.addEventListener('scroll', () => {
-            const scrollPosition = window.scrollY;
-            communityBackground.style.backgroundPositionY = `${scrollPosition * 0.3}px`;
+    scrollTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
+    });
 
-        // Botón para subir
-        const scrollTopButton = document.querySelector('.scroll-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollTopButton.style.opacity = '1';
-                scrollTopButton.style.pointerEvents = 'auto';
-            } else {
-                scrollTopButton.style.opacity = '0';
-                scrollTopButton.style.pointerEvents = 'none';
-            }
-        });
-// CUENTA REGRESIVA RADIO
+    // =========================
+    // CUENTA REGRESIVA RADIO
+    // =========================
 
-        const launchDate = new Date("August 17, 2025 00:00:00").getTime();
+    const launchDate =
+        new Date("August 17, 2026 00:00:00").getTime();
 
-        const countdown = setInterval(() => {
+    const countdown = setInterval(() => {
 
-            const now = new Date().getTime();
+        const now = new Date().getTime();
 
-            const distance = launchDate - now;
+        const distance = launchDate - now;
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const days = Math.floor(
+            distance / (1000 * 60 * 60 * 24)
+        );
 
-            const hours = Math.floor(
-                (distance % (1000 * 60 * 60 * 24))
-                / (1000 * 60 * 60)
-            );
+        const hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24))
+            / (1000 * 60 * 60)
+        );
 
-            const minutes = Math.floor(
-                (distance % (1000 * 60 * 60))
-                / (1000 * 60)
-            );
+        const minutes = Math.floor(
+            (distance % (1000 * 60 * 60))
+            / (1000 * 60)
+        );
 
         const seconds = Math.floor(
             (distance % (1000 * 60))
@@ -478,19 +500,19 @@
         document.getElementById("minutes").innerHTML = minutes;
         document.getElementById("seconds").innerHTML = seconds;
 
-        if(distance < 0){
+        // Cuando llegue la fecha
+        if (distance < 0) {
 
             clearInterval(countdown);
 
-            document.querySelector(".countdown-container").innerHTML =
-            "<h2>🎙️ ¡YA ESTAMOS AL AIRE!</h2>";
-
+            document.getElementById("days").innerHTML = "0";
+            document.getElementById("hours").innerHTML = "0";
+            document.getElementById("minutes").innerHTML = "0";
+            document.getElementById("seconds").innerHTML = "0";
         }
 
     }, 1000);
-        scrollTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
+
+</script>
 </body>
 </html>
