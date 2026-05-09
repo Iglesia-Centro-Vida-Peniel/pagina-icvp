@@ -442,15 +442,16 @@
 
     showVerse();
 
-    setInterval(showVerse, 10000);
-    // Parallax para la sección de comunidad
-    const communityBackground = document.querySelector('.community-background');
+    const communityBackground =
+    document.querySelector('.community-background');
 
     window.addEventListener('scroll', () => {
+
         const scrollPosition = window.scrollY;
 
         communityBackground.style.transform =
             `translateY(${scrollPosition * 0.15}px)`;
+
     });
 
     // Botón para subir
